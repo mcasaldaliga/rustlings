@@ -5,7 +5,21 @@
 
 fn trim_me(input: &str) -> String {
     // TODO: Remove whitespace from both ends of a string!
-    ???
+    // first and last positions of non whitespace characters in input string
+    let first:usize = 0;
+    let last:usize = 0;
+    // boolean var to know if we are past the white space beggining part of the string
+    let middle = false;
+    for (i, ch) in input.chars().enumerate() {
+        if ch == ' ' {
+            if ! middle {
+                first += 1;
+            } 
+        } else {
+            last = i;
+        }
+    }
+    (&input[first..last]).to_string()
 }
 
 fn compose_me(input: &str) -> String {
